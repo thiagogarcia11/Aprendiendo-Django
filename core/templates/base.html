@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Noticias Tecnológicas {% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media-query.css' %}">
+</head>
+
+<body {% block class %}{% endblock %}>
+
+    <header class="header">
+        <div class="social">
+            <div class="social-icons">
+                <a target="_blank" href="https://www.youtube.com/c/ufc/videos"><i class="fa-brands fa-youtube"></i></a>
+                <a target="_blank" href="https://twitter.com/ThiagoGarcia_11"><i class="fa-brands fa-twitter"></i></a>
+                <a target="_blank" href="https://github.com/thiagogarcia11"><i class="fa-brands fa-github"></i></a>
+                <a target="_blank" href="https://www.instagram.com/thiago_garcia11/"><i class="fa-brands fa-instagram"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/thiago-garc%C3%ADa-da-rosa-3102ba248/"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'img/logo.png' %}" alt="Logo de página">
+                </a>
+            </div>
+            <div class="nav-link">
+                <a href="{% url 'profile' %}">Sobre mi</a>
+            </div>
+        </nav>
+    </header>
+    
+    {% block content %}
+
+    {% endblock %}
+
+    {% block contact %}
+    <section class="section-contact">
+        <div class="contact">
+            <img src="{% static 'img/013-newsletter.png' %}" alt="">
+            <div class="contact-info">
+                <a href="">Contáctanos</a>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+
+        <div class="contact">
+            <img src="{% static 'img/006-like.png' %}" alt="">
+            <div class="contact-info">
+                <a href="">Escribe tu opinión!</a>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+
+    {% block footer%}
+    <footer>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </footer>
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} Mi Perfil {% endblock %}
+
+{% load static%}
+
+{% block content %}
+
+<main class="main-profile">
+    <section class="profile">
+        <div class="profile-img">
+            <img src="{% static 'img/hasbu-boca.webp' %}" alt="">
+        </div>
+        <div class="profile-info">
+            <h2>Hola, mi Nombre es Hasbulla Magomedov!</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis necessitatibus eum magni expedita
+                tempora nulla quod numquam ipsum facilis, incidunt, aut voluptas iusto amet totam laudantium ipsam
+                ipsa, possimus earum.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, delectus quis a, similique quaerat
+                accusantium ab blanditiis iusto ducimus, error repudiandae incidunt libero facere consequatur
+                exercitationem laboriosam quibusdam architecto commodi.
+            </p>
+        </div>
+    </section>
+
+    <section class="project-container">
+        <h3>Proyectos</h3>
+        {% for project in projects %}
+        <div class="project">
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.desc }}</p>                
+        </div>
+        {% endfor %}
+    </section>
+</main>
+
+{% endblock %}
